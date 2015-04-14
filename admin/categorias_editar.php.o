@@ -1,0 +1,236 @@
+<?php
+
+	if (!isset($_SESSION["admin"])) {redirect("login.php");	exit(); }
+
+	$cond 	= "select * from categorias where id=".$id;
+	$rs 	= $db->SelectLimit($cond, 1);
+	$Nota	= $rs->FetchRow();
+
+    $cuerpo[1]	       = stripslashes($Nota['cuerpo1']);
+    $cuerpo[2]	       = stripslashes($Nota['cuerpo2']);
+    $cuerpo[3]	       = stripslashes($Nota['cuerpo3']);
+    $cuerpo[4]	       = stripslashes($Nota['cuerpo4']);
+    $cuerpo[5]	       = stripslashes($Nota['cuerpo5']);                
+	$titulo[1]		   = $Nota['titulo1'];
+	$titulo[2]		   = $Nota['titulo2'];
+	$titulo[3]		   = $Nota['titulo3'];
+	$titulo[4]		   = $Nota['titulo4'];
+	$titulo[5]		   = $Nota['titulo5'];                
+    $keywords[1]	       = $Nota['keywords1'];
+    $keywords[2]	       = $Nota['keywords2'];
+    $keywords[3]	       = $Nota['keywords3'];
+    $keywords[4]	       = $Nota['keywords4'];
+    $keywords[5]	       = $Nota['keywords5'];                
+    $url_amigable[1]	   = $Nota['urlamigable1'];
+    $url_amigable[2]	   = $Nota['urlamigable2'];
+    $url_amigable[3]	   = $Nota['urlamigable3'];
+    $url_amigable[4]	   = $Nota['urlamigable4'];
+    $url_amigable[5]	   = $Nota['urlamigable5'];                
+    $robots	           = $Nota['robots'];    
+    $muestra_cuerpo    = $Nota['muestra_cuerpo'];
+    $muestra_productos = $Nota['muestra_productos'];
+    $pub_a_mostrar = $Nota['pub_a_mostrar'];
+    $template = $Nota['template'];    
+    $grupo_id = $Nota['grupo_id'];
+
+    $cond    = "select * from grupos where activo=1 order by nombre ASC";
+    $rs      = $db->Execute($cond);
+    $xGrupos = $rs->GetRows();
+    $select_grupos = "<select name='grupo_id' style='width:150px;'>";
+    if ($grupo_id==0) {
+            $select_grupos.= "<option value='0' selected='selected'>Publico</option>";    
+    } else {
+            $select_grupos.= "<option value='0'>Publico</option>";            
+    }        
+    foreach ($xGrupos as $xgrupo) {
+        if ($xgrupo['id'] == $grupo_id) {
+            $select_grupos.= "<option value='{$xgrupo['id']}' selected='selected'>{$xgrupo['nombre']}</option>";    
+        } else {
+            $select_grupos.= "<option value='{$xgrupo['id']}'>{$xgrupo['nombre']}</option>";
+        }
+    }
+    $select_grupos.= "</select>";
+
+?>
+<script type="text/javascript">
+function arma_url_friendly(cual){
+    var titulo = document.getElementById('xtitulo'+cual).value;
+    url_amigable = titulo.toLowerCase();
+    url_amigable = url_amigable.replace(/[ ]/gi,'-');
+    url_amigable = url_amigable.replace(/[á]/gi,'a');
+    url_amigable = url_amigable.replace(/[é]/gi,'e');
+    url_amigable = url_amigable.replace(/[í]/gi,'i');
+    url_amigable = url_amigable.replace(/[ó]/gi,'o');
+    url_amigable = url_amigable.replace(/[ú]/gi,'u');
+    url_amigable = url_amigable.replace(/[ñ]/gi,'n');
+    url_amigable = url_amigable.replace(/[/*()|&%$#"']/gi,'-');                    
+    url_amigable1 = url_amigable.replace(/[----]/gi,'-');
+    url_amigable2 = url_amigable1.replace(/[---]/gi,'-');
+    url_amigable = url_amigable2.replace(/[--]/gi,'-');
+    
+    
+    document.getElementById("url_amigable"+cual).value = url_amigable;
+    keyword      = url_amigable.replace(/[-]/gi,',');
+    document.getElementById("keywords"+cual).value = keyword;
+    
+}
+
+function muestra(cual){
+
+    <?php for($i=1; $i<=5; $i++) { ?>
+        <?php if( !empty($Idiomas[($i-1)]['name']) ) { ?>
+        document.getElementById('idioma<?=$i;?>').style.display = 'none';
+        <?php } ?>
+    <?php } ?>        
+    document.getElementById(cual).style.display = 'block';
+    
+}
+
+</script>
+
+<link href="<?=RUTA;?>/css/texto.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<?php echo URL;?>/admin/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="<?php echo URL;?>/admin/js/ckfinder/ckfinder.js"></script>
+
+<center>
+<form name='form1' action='categorias.php?accion=grabar&id=$id' method='post'>
+<table width='800' cellpadding='3' cellspacing='3' border='0' style="border-width:1px; border-style:solid; border-color:#000000;background-color:white;">
+	<tr bgcolor='#0271E3' >
+		<td colspan='2' align='center'>
+			<span style="color:#FFFFFF; font-weight:bold; font-size:14px;">Agregar / Modificar una Categoria</span></td>
+	</tr>
+    <tr><td colspan="2">
+    <div id='menu_idiomas'>
+        <ul>
+            <li><a href="#" onclick="muestra('idioma1');"><img src='<?=URL.$Idiomas[0]['flag'];?>' border='0' /> <?=$Idiomas[0]['name'];?></a></li>
+            <? if( !empty($Idiomas[1]['name'])) {echo "<li><a href='#' onclick=\"muestra('idioma2');\"><img src='".URL.$Idiomas[1]['flag']."' border='0' > ".$Idiomas[1]['name']."</a></li>";} ?>
+            <? if( !empty($Idiomas[2]['name'])) {echo "<li><a href='#' onclick=\"muestra('idioma3');\"><img src='".URL.$Idiomas[2]['flag']."' border='0' > ".$Idiomas[2]['name']."</a></li>";} ?>
+            <? if( !empty($Idiomas[3]['name'])) {echo "<li><a href='#' onclick=\"muestra('idioma4');\"><img src='".URL.$Idiomas[3]['flag']."' border='0' > ".$Idiomas[3]['name']."</a></li>";} ?>
+            <? if( !empty($Idiomas[4]['name'])) {echo "<li><a href='#' onclick=\"muestra('idioma5');\"><img src='".URL.$Idiomas[4]['flag']."' border='0' > ".$Idiomas[4]['name']."</a></li>";} ?>                                    
+        </ul>
+    </div>
+    </td></tr>
+
+
+	<tr><td colspan='2'>
+    <?php for($i=1; $i<=5; $i++) { ?>
+        <?php if( !empty($Idiomas[($i-1)]['name']) ) { ?>
+        <?php if($i==1) { $display='block';} else {$display='none';} ?>
+		<div id="idioma<?=$i;?>" style="display:<?=$display;?>; "><img src='<?=URL.$Idiomas[($i-1)]['flag'];?>' border='0' />  <strong><?=$Idiomas[($i-1)]['name'];?></strong>
+        <table width='100%'>
+			<tr >
+				<td align='right'><span style="color:#000000; font-weight:bold; font-size:12px;\">Titulo:</span></td>
+                <td align='left'><input type='text' name='titulo[<?=$i;?>]' id="xtitulo<?=$i;?>" value='<?=$titulo[$i];?>' size='90' maxlength='255' onblur="arma_url_friendly('<?=$i;?>');"/></td>
+			</tr>
+			<tr >
+				<td align='right'><span style="color:#000000; font-weight:bold; font-size:12px;\">URL Amigable:</span></td>
+                <td align='left'><input type='text' id='url_amigable<?=$i;?>'  name='url_amigable[<?=$i;?>]' value='<?=$url_amigable[$i];?>' size='90' maxlength='255' /></td>
+			</tr>
+
+			<tr >
+				<td align='right'><span style="color:#000000; font-weight:bold; font-size:12px;\">Keywords:</span></td>
+                <td align='left'><input type='text' name='keywords[<?=$i;?>]' id='keywords<?=$i;?>' value='<?=$keywords[$i];?>' size='90' maxlength='255' /></td>
+			</tr>
+
+			<tr >
+				<td align='right'><span style="color:#000000; font-weight:bold; font-size:12px;\">Cuerpo:</span></td>
+				<td align='left'>
+                    <textarea  id='cuerpo<?=$i;?>' name='cuerpo[<?=$i;?>]' style="width:800px; height:600px;" class="ckeditor"><?=$cuerpo[$i];?></textarea>
+            		<script type="text/javascript">
+                       var editor = CKEDITOR.replace( 'cuerpo<?=$i;?>' );
+            	       CKFinder.setupCKEditor( editor, '<?php echo URL;?>/admin/js/ckfinder/' ) ;
+            		</script>
+                
+                </td>
+			</tr>
+        </table>    
+        </div>
+        <?php } ?>
+    
+    <?php } ?>
+
+        <table width='100%'>
+<?php if ($_SESSION['god'] == 1) { ?>        
+			<tr ><td align='left' colspan='2'><hr /></td></tr>
+			<tr >
+				<td align='left' colspan='2'><span style="color:#000000; font-weight:bold; font-size:12px;">Cuando seleccione esta categoría, muestra el Cuerpo o un listado de Publicaciones?:</span>
+				<select name='muestra_cuerpo'>
+					<option value='0' <?php if($muestra_cuerpo==0){echo "selected=selected";}?> >Listado de Publicaciones</option>
+					<option value='1' <?php if($muestra_cuerpo==1){echo "selected=selected";}?> >Cuerpo de la Categoría</option>
+				</select>
+                
+				</td>
+			</tr>
+            <tr >
+                <td align='left' colspan='2'><span style="color:#000000; font-weight:bold; font-size:12px;">Que grupo de usuarios accede a las publicaciones de esta categoría?:</span>
+                    <?php echo $select_grupos;?>                
+                </td>
+            </tr>
+
+
+			<tr >
+				<td align='left' colspan='2'><span style="color:#000000; font-weight:bold; font-size:12px;">Cantidad de Publicaciones a mostrar por pagina en el listado:</span>
+                <input type='text' name='pub_a_mostrar' value='<?=$pub_a_mostrar;?>' size='3' maxlength='2' />
+				</td>
+			</tr>
+
+			<tr >
+				<td align='left' colspan="2"><span style="color:#000000; font-weight:bold; font-size:12px;\">Template a Utilizar para mostrar el listado de publicaciones:</span>
+                <select name='template'>
+                <?php foreach($TemplatesCategorias as $key=>$value) { ?>
+                    <option value='<?=$key;?>' <?php if($template==$key){echo "selected=selected";}?> ><?=$value;?></option>
+                <?php } ?>
+				</select>
+                </td>
+			</tr>
+            
+			<tr >
+				<td align='left' colspan="2"><span style="color:#000000; font-weight:bold; font-size:12px;\">Esta Categoria Muestra Productos?:</span>
+				<select name='muestra_productos'>
+					<option value='0' <?php if($muestra_productos==0){echo "selected=selected";}?> >No</option>
+					<option value='1' <?php if($muestra_productos==1){echo "selected=selected";}?> >Si</option>
+				</select>
+                </td>
+			</tr>
+<?php } else { ?>
+        <tr><td colspan='2'>
+            <input type='hidden' name='musetra_cuerpo' value='<?=$muestra_cuerpo;?>'/>
+            <input type='hidden' name='pub_a_mostrar' value='<?=$pub_a_mostrar;?>'/>
+            <input type='hidden' name='template' value='<?=$template;?>'/>
+            <input type='hidden' name='muestra_productos' value='<?=$muestra_productos;?>'/>
+        </td></tr>
+        
+<?php } ?>
+
+			<tr >
+				<td align='right'><span style="color:#000000; font-weight:bold; font-size:12px;\">Robots:</span></td>
+                <td align='left'><input type='text' name='robots' value='<?=$robots;?>' size='90' maxlength='255' /></td>
+			</tr>
+
+            <tr ><td align='left' colspan='2'>
+                <hr />
+                <pre>
+A continuación podemos ver una explicación de los diferentes valores que podemos usar dentro del tag meta robots:
+<u>index</u>: Permite a los motores de búsqueda indexar la página. No lo tienes que añadir ya que por defecto, las páginas se indexan.
+<u>noindex</u>: No permite a los motores de búsqueda indexar la página.
+<u>none</u>: Este valor dice a los motores de búsqueda que no hagan nada con la página.
+<u>follow</u>: Le dice a los motores de búsqueda que sigan los enlaces de la página, puedan o no puedan indexar su contenido.
+<u>nofollow</u>: Le dice a los motores de búsqueda que no sigan ninguno de los enlaces de la página (Útil para páginas en las que no quieres <br/>pasar ningún PageRank a los enlaces que contiene)
+<u>noarchive</u>: Evita que el motor de búsqueda muestre la opción de “página en cache”.
+<u>nocache</u>: Lo mismo que noarchive, usado por algunos buscadores.
+<u>nosnippet</u>: Evita que los buscadores muestren un breve texto debajo del título de la página. También evita que guarden en caché la página.
+<u>noodp</u>: Bloquea a los buscadores el uso de la descripción de la página de DMOZ (ODP) como texto para descripción del contenido de la página.
+            </pre>
+            </td></tr>
+    	</table>
+	</td></tr>
+	<tr >
+		<td align='right'></td>
+		<td align='center'>
+			<input type='hidden' name='id' value='<?=$id;?>' />
+			<input type='submit' name='submit' value='<< Guardar los cambios >>'/>
+		</td>
+	</tr>
+</table>
+</form>
+</center>
