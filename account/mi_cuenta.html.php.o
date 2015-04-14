@@ -1,0 +1,175 @@
+<?php include(ROOT.'/account/menu_mi_cuenta.html.php');?>
+
+<!-- Arma url friendly -->
+<script type="text/javascript" src="<?php echo URL;?>/js/jFriendly.js"></script>
+
+<!-- AjaxUpload -->
+<link rel="stylesheet" href="<?php echo URL;?>/modules/AjaxUpload/css/ajaxupload.css" type="text/css" media="screen" />    
+<script type="text/javascript" src="<?php echo URL;?>/modules/AjaxUpload/js/ajaxupload.js"></script>
+
+
+<div class='grid_12' style='min-height:550px;'>    
+
+    <link rel="stylesheet" href="<?php echo URL;?>/css/formularios.css" type="text/css" media="screen" />
+
+    <script>
+        $(document).ready(function(){
+            $("#frm_registro").validate();
+
+            $("#nombre_fantasia").jFriendly("#url",true);                  
+        });
+
+          
+    </script>
+
+    <style>
+        input {margin:5px;}
+        .ctitulo {
+            text-align:right;
+            font-weight:bold;
+            line-height:30px;
+        }
+        .required { 
+            border:1px solid #FF9900; 
+            background:#eee;
+        }
+    </style>
+
+
+    <h1>Modificación de Datos Personales</h1>
+
+    <form id="frm_registro" method="post" action="<?php echo URL;?>/account/mi_cuenta.php" class="formulario"   enctype="multipart/form-data">
+
+        <div class="grid_3 ctitulo">Apellido<em>*</em></div>
+        <div class='grid_4'>
+            <input id="apellido" name="apellido" size="50" class="required" value="<?php echo $data['apellido'];?>"/>
+        </div>
+        <div class="clear"></div>
+
+        <div class="grid_3 ctitulo">Nombre<em>*</em></div>
+        <div class='grid_4'>
+            <input id="nombre" name="nombre" size="50" class="required" value="<?php echo $data['nombre'];?>"/>
+        </div>
+        <div class="clear"></div>
+
+        <div class="grid_3 ctitulo">Nombre de Fantasía<em>*</em></div>
+        <div class='grid_4'>
+            <input id="nombre_fantasia" name="nombre_fantasia" size="50" class="required" value="<?php echo $data['nombre_fantasia'];?>"/>
+        </div>
+        <div class="clear"></div>
+
+        <div class="grid_3 ctitulo">URL de su perfil</div>
+        <div class='grid_4'>
+            <input type='text'  name='url' id="url" value="<?php echo $data['url'];?>" size='60' maxlength='60' style='font-weight:bold;color:#E77817;'>
+        </div>
+        <div class="clear"></div>
+
+        <div class="grid_3 ctitulo">Email<em>*</em></div>
+        <div class='grid_4'>
+            <input id="email" name="email" size="50" class="required email" value="<?php echo $data['email'];?>" onblur="comprueba_email();"/>
+        </div>
+        <div class="clear"></div>
+
+
+        <div class="grid_3 ctitulo">Teléfono<em>*</em></div>
+        <div class='grid_4'>
+            <input id="telefono" name="telefono" size="50" class="required" value="<?php echo $data['telefono'];?>"/>
+        </div>
+        <div class="clear"></div>
+
+        <div class="grid_3 ctitulo">Fax</div>
+        <div class='grid_4'>
+            <input id="fax" name="fax" size="50" value="<?php echo $data['fax'];?>"/>
+        </div>
+        <div class="clear"></div>
+
+        <div class='grid_3 ctitulo' >Dirección<em>*</em></div>
+        <div class='grid_3'>
+            <input type='text'  name='direccion' id="direccion" value="<?php echo $data['direccion'];?>" style='width:200px;' class="required"/>
+        </div>
+        <div class='grid_4 ctitulo' >Código Postal: 
+            <input type='text'  name='codigo_postal' id="codigo_postal" value="<?php echo $data['codigo_postal'];?>" style='width:100px;' />
+        </div>
+
+        <div class="clear"></div>
+
+        <div class='grid_3 ctitulo' >Provincia<em>*</em></div>
+        <div class='grid_4'><?php echo $select_provincia;?></div>
+        <div class="clear"></div>
+
+        <div class='grid_3 ctitulo' >Loalidad<em>*</em></div>
+		<div class='grid_4'><?php echo $select_ciudad;?></div>
+		<div class='clear'></div>
+
+
+        <div class='grid_2 ctitulo' >Imagen Miniatura:<br>300x220</div>
+        <div class='grid_5'>
+            <table >
+                <tr>
+                    <?php if(!empty($data['miniatura'])) { ?>
+                        <td width='150'>
+                            <img src='<?php echo VER_FOTOS;?>/<?php echo $data['miniatura'];?>' style='width:150px; height:110px;'>
+                        </td>
+                    <?php } ?>    
+
+                    <td>
+                        <input type='file' name='miniatura' id='miniatura'>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+
+        <div class='clear'></div>
+
+
+
+
+
+        <div class="grid_7" style='text-align:center;'>
+            <br><br>
+        	Todos los datos son obligatorios<br>
+            <input type='submit' name='submit' value='Guardar Cambios' title="Guardar Cambios" style='width:300px;margin-left:100px;'/>
+        </div>
+        <div class="clear"></div>
+    </form>
+    
+</div>
+
+<script>
+$(document).ready(function(){
+   $("#provincia_id").change(function () {
+        var provincia_id = $("#provincia_id").val();
+        $.ajax({
+            type:"GET", //tipo de formato de envio de información
+            url: "<?php echo URL;?>/ajax/actualizar_ciudades.php?provincia_id="+provincia_id,
+            success:function(respuesta){
+                $('#ciudad_id').html(respuesta);
+            }
+        });
+
+    });
+})
+
+
+        function comprueba_email(){
+              id = '<?php echo $_SESSION['login'];?>';
+              email = $("#email").val();
+            $.ajax({
+                url: '<?php echo URL;?>/ajax/comprueba_email.php?email='+email+'&id='+id,
+              success: function(data) {
+                console.log(data);
+                if(data==1){
+                    $('#email').val('');
+                    $('#email').css('border', 'solid 1px red');
+                    $('#email').val('Email existente!');
+                } 
+              }
+            });        
+        }
+</script>
+
+<div class='clear'></div>
+
+<?php //pr($data);?>
