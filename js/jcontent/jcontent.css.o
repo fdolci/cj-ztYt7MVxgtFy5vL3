@@ -1,0 +1,119 @@
+div.jContent
+{
+	width:736px;
+	height:252px;
+	float: left;
+		
+}
+
+.slides
+{
+	background-color: #ffffff;	
+	width:736px;
+	height:252px;
+}
+
+div.jContent p
+{
+	padding: 0px;	
+	margin: 0px;
+}
+
+div.jContent a
+{
+	float: left;
+	display: block;	
+}
+
+div.jContent a.hide
+{
+	visibility: hidden;
+}
+
+/* horizontal */
+div.jc-horizontal
+{
+	margin: 0px; 
+	width:736px;
+	height:252px;	
+}
+
+
+div.jc-horizontal a
+{
+	width:736px;
+	height:252px;
+}
+
+
+div.jc-horizontal a.prev
+{
+	margin: 0px;
+	background: url('../../js/jcontent/arrows/wleft.png') no-repeat;
+}
+
+div.jc-horizontal a.prev:hover
+{
+	background: url('../../js/jcontent/arrows/bleft.png') no-repeat;
+}
+
+div.jc-horizontal a.next
+{
+	margin: 0px;
+	background: url('../../js/jcontent/arrows/wright.png') no-repeat;
+}
+
+div.jc-horizontal a.next:hover
+{
+	background: url('../../js/jcontent/arrows/bright.png') no-repeat;
+}
+
+/* vertical */
+div.jc-vertical
+{
+	margin: 0px; 
+}
+
+
+div.jc-vertical a
+{
+	width:736px;
+	height:252px;
+}
+
+div.jc-vertical a.prev
+{
+	margin: 0px 0px 5px 0px;
+	background: url('../../js/jcontent/arrows/wup.png') no-repeat top center;
+}
+
+div.jc-vertical a.prev:hover
+{
+	background: url('../../js/jcontent/arrows/bup.png') no-repeat top center;
+}
+
+div.jc-vertical a.next
+{
+	margin: 5px 0px 0px 0px;
+	background: url('../../js/jcontent/arrows/wdown.png') no-repeat top center;
+}
+
+div.jc-vertical a.bottom-arr:hover
+{
+	background: url('../../js/jcontent/arrows/bdown.png') no-repeat top center;
+}
+
+/* auto and circle */
+div.jc-auto
+{
+	margin: 0px; 
+	width:736px;
+	height:252px;
+}
+
+
+div.js-circle
+{
+	
+}
+

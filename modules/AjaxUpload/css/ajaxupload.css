@@ -1,0 +1,218 @@
+body{
+        margin:0;
+        padding:0;
+        font:normal 12px Arial, Helvetica, sans-serif
+    }
+    #content_gallery1{
+        width:185px;
+        height:170px;
+        /* 
+            height:550px; 
+            margin:20px auto;
+            padding-top:10px;
+        */
+        border:6px solid #F3F3F3;
+        overflow-y:auto
+    }
+    #upload1{
+/*
+margin:10px auto;        
+*/        
+        padding:12px;
+        font:bold 12px Arial, Helvetica, sans-serif;
+        text-align:center;
+        background:#f2f2f2;
+        color:#3366cc;
+        border:1px solid #ccc;
+        width:150px;
+        display:block;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        text-decoration:none
+    }
+    #gallery1{
+        list-style:none;
+        margin:20px 0 0 0;
+        padding:0
+    }
+    #gallery1 li{
+        display:block;
+        float:left;
+        width:150px;
+        height:118px;
+        background:#CCC;
+        border:1px solid #093;
+        text-align:center;
+        padding:6px 0;
+        margin:5px 0 5px 14px
+    }
+    #gallery1 li img{
+        width:150px;
+        height:110px
+    }
+ 
+    #gallery1 li a img{
+        width:auto;
+        height:auto;
+        float:right;
+    }
+
+
+
+    #content_gallery{
+        width:750px;
+        margin:20px auto;
+        height:550px;
+        border:6px solid #F3F3F3;
+        padding-top:10px;
+        overflow-y:auto
+    }
+    #upload{
+        padding:12px;
+        font:bold 12px Arial, Helvetica, sans-serif;
+        text-align:center;
+        background:#f2f2f2;
+        color:#3366cc;
+        border:1px solid #ccc;
+        width:150px;
+        display:block;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        margin:0 auto;
+        text-decoration:none
+    }
+    #gallery{
+        list-style:none;
+        margin:20px 0 0 0;
+        padding:0
+    }
+    #gallery li{
+        display:block;
+        float:left;
+        width:155px;
+        height:160px;
+        background:#9AF099;
+        border:1px solid #093;
+        text-align:center;
+        padding:6px 0;
+        margin:5px 0 5px 14px
+    }
+    #gallery li img{
+        width:145px;
+        height:140px
+    }
+ 
+    #gallery li a img{
+        width:auto;
+        height:auto;
+        float:right;
+    }
+
+
+    #content_gallery2{
+        width:650px;
+        /* 
+            height:550px; 
+            margin:20px auto;
+            padding-top:10px;
+        */
+        border:6px solid #F3F3F3;
+        overflow-y:auto
+    }
+    #upload2{
+/*
+margin:10px auto;        
+*/        
+        padding:12px;
+        font:bold 12px Arial, Helvetica, sans-serif;
+        text-align:center;
+        background:#f2f2f2;
+        color:#3366cc;
+        border:1px solid #ccc;
+        width:150px;
+        display:block;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        text-decoration:none
+    }
+    #gallery2{
+        list-style:none;
+        margin:20px 0 0 0;
+        padding:0
+    }
+    #gallery2 li{
+        display:block;
+        float:left;
+        width:610px;
+        height:120px;
+        background:#CCC;
+        border:1px solid #093;
+        text-align:center;
+        padding:6px 0;
+        margin:5px 0 5px 14px
+    }
+    #gallery2 li img{
+        width:600px;
+    }
+ 
+    #gallery2 li a img{
+        width:auto;
+        height:auto;
+        float:right;
+    }
+
+/* ------------------------ 3 ------------------------*/
+    #content_gallery3{
+        width:650px;
+        /* 
+            height:550px; 
+            margin:20px auto;
+            padding-top:10px;
+        */
+        border:6px solid #F3F3F3;
+        overflow-y:auto
+    }
+    #upload3{
+/*
+margin:10px auto;        
+*/        
+        padding:12px;
+        font:bold 12px Arial, Helvetica, sans-serif;
+        text-align:center;
+        background:#f2f2f2;
+        color:#3366cc;
+        border:1px solid #ccc;
+        width:150px;
+        display:block;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        text-decoration:none
+    }
+    #gallery3{
+        list-style:none;
+        margin:20px 0 0 0;
+        padding:0
+    }
+    #gallery3 li{
+        display:block;
+        float:left;
+        width:610px;
+        height:120px;
+        background:#CCC;
+        border:1px solid #093;
+        text-align:center;
+        padding:6px 0;
+        margin:5px 0 5px 14px
+    }
+    #gallery3 li img{
+        width:600px;
+    }
+ 
+    #gallery3 li a img{
+        width:auto;
+        height:auto;
+        float:right;
+    }
+
+
+

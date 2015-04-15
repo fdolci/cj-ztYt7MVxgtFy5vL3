@@ -1,0 +1,65 @@
+p
+{
+	padding: 0px;	
+}
+
+
+p.header
+{
+	font-weight: bold;	
+	clear: both;
+	font-size: 18px;
+	color: #7f8ba2;
+}
+
+p.title
+{
+	font-weight: bold;	
+	clear: both;
+	font-size: 16px;
+}
+
+p.ajax-loader
+{
+	text-align: center;
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+
+/* jContent demos */
+#demo1.jc-horizontal a.prev,
+#demo1.jc-horizontal a.next,
+#demo7.jc-horizontal a.prev,
+#demo7.jc-horizontal a.next
+{
+	margin-top: 0px;
+}
+
+.jContent div.slides
+{
+	height: 170px;
+	border: 0px solid #cccccc;
+}
+
+.jContent p.title
+{
+	padding: 10px 20px 0px 25px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.jContent p.txt
+{
+	padding: 0px;
+	font-size: 14px;
+}
+
+.jContent p.txt img
+{
+	/* float: left; */
+	display: block;
+	border: 0px solid #ffffff;
+	margin: 0px;
+}
+

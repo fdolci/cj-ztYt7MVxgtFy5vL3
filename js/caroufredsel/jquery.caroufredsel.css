@@ -1,0 +1,15 @@
+.image_carousel {
+    padding: 0px 0 10px 19px;
+}
+.image_carousel img {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+    float: left;
+}
+.clearfix {
+    float: none;
+    clear: both;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo 2</title>
+    <link href="themes/2/js-image-slider.css" rel="stylesheet" type="text/css" />
+    <script src="themes/2/js-image-slider.js" type="text/javascript"></script>
+    <link href="generic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="div1"><h2>Demo 2 - Menucool Image Slider with thumbnails</h2>
+        <p>Demos: &nbsp;  &nbsp; <a href="demo1.html">1</a> &nbsp; 2 &nbsp; <a href="demo3.html">3</a> &nbsp; <a href="demo4.html">4</a>
+        &nbsp; <a href="demo5.html">5</a> &nbsp; <a href="demo6.html">6</a> &nbsp; <a href="demo7.html">7</a></p>
+    </div>
+    
+    <div id="sliderFrame">
+        <div id="slider">
+            <a href="http://www.menucool.com/jquery-slider" target="_blank">
+                <img src="images/image-slider-1.jpg" alt="Welcome to jQuery Slider" />
+            </a>
+            <img src="images/image-slider-2.jpg" alt="Pure Javascript. No jQuery. No Flash." />
+            <img src="images/image-slider-3.jpg" />
+            <img src="images/image-slider-4.jpg" />
+        </div>
+        <!--thumbnails-->
+        <div id="thumbs">
+            <div class="thumb">
+                <div class="frame"><img src="images/thumb1.jpg" /></div>
+                <div class="thumb-content"><p>HTML Content</p>Thumbnails allows any HTML content</div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="thumb">
+                <div class="frame"><img src="images/thumb2.jpg" /></div>
+                <div class="thumb-content"><p>Customizable</p>Thumbnail style is customizable</div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="thumb">
+                <div class="frame"><img src="images/thumb3.jpg" /></div>
+                <div class="thumb-content"><p>Variety of Layouts</p>Just a CSS tweak.</div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="thumb">
+                <div class="frame"><img src="images/thumb4.jpg" /></div>
+                <div class="thumb-content"><p>Integration</p>Built-in functions for the thumbnails</div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--clear above float:left elements. It is required if above #slider is styled as float:left. -->
+        <div style="clear:both;height:0;"></div>
+    </div>
+
+
+    <div class="div2">
+        <ul>
+            <li>
+                The thumbnails' HTML markup:
+                <div class="code">&lt;div id="thumbs"&gt;
+    &lt;div class="thumb"&gt;
+        <span class="green">(any HTML content)</span>
+    &lt;/div&gt;
+    &lt;div class="thumb"&gt;
+        <span class="green">(any HTML content)</span>
+    &lt;/div&gt;
+    ... ...
+&lt;/div&gt;</div>
+                <p>You can put any HTML content inside each <span class="green">&lt;div class="thumb"&gt; &lt;/div&gt;</span> element. The number of thumbnails and the number of the main slides should be the same.</p>
+            </li>
+            <li>By default, the <b>thumbnailsWrapperId</b> property in the JavaScript is also configured as <span class="red">"thumbs"</span>. This makes the thumbnails work synchronously with the main slider.</li>
+            <li>When each thumbnail (<span class="green">&lt;div class="thumb"&gt; <em> ... </em>&lt;/div&gt;</span>) is hovered, 
+                its style is set by both <b>thumb</b> and <b>thumb-on</b> class (<span class="cn">class="thumb thumb-on"</span>)</li>
+            <li>Tweak the style of the <b class="cn">#thumbs, .thumb,</b> and <b class="cn">.thumb-on</b> in the <em>js-image-slider.css</em> 
+            file for different thumbnail layouts and styles: horizontal, vertical, in grids, ...</li>
+            <li>If there are many thumbnails and the containing block does not have enough room to show them, you can make the slider work together with our jQuery Slider. See <a href="http://www.menucool.com/slider/jquery-slideshow">jQuery Slideshow</a>.</li>
+            <li>This demo has the advanced feature (thumbnails support). The thumbnails will not work properly on the production server without a valid license.</li>
+        </ul>
+    </div>
+</body>
+</html>

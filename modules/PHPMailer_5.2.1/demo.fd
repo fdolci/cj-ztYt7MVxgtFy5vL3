@@ -1,0 +1,50 @@
+http://phpmailer.codeworxtech.com/ 
+
+teniendo las librerias (class.phpmailer.php y class.smtp.php), las dejamos junto al o los archivos que enviaran el correo. (digo al o los archivos ya uqe pueden tener un formulario en html y un archivo php que se preocupe de enviar el correo, de hecho esta guía esta pensada para que así lo sea). 
+
+ahora debemos asignar los datos del host, el puerto y tu id y contraseña de GMail ya que para usar el smtp necesitamos autentificarnos. 
+el código quedaría así: 
+1. include("class.phpmailer.php"; 
+2. include("class.smtp.php"; 
+3. $mail = new PHPMailer(); 
+4. $mail->IsSMTP(); 
+5. $mail->SMTPAuth = true; 
+6. $mail->SMTPSecure = "ssl"; 
+7. $mail->Host = "smtp.gmail.com"; 
+8. $mail->Port = 465; 
+9. $mail->Username = "username@gmail.com"; 
+10. $mail->Password = "userpass";
+
+
+lo único que deben preocuparse de cambiar son las lineas 9 y 10 con su id y contraseña respectivamente. 
+
+Hasta aquí tenemos preparada la conexion con el servidor smtp de Gmail 
+ahora deberemos preparar y hacer el envio del mail. 
+
+1. $mail->From = "usuario@dominio.com"; 
+2. $mail->FromName = "Nombre"; 
+3. $mail->Subject = "Asunto del Email"; 
+4. $mail->AltBody = "Este es un mensaje de prueba."; 
+5. $mail->MsgHTML("<b>Este es un mensaje de prueba</b>."; 
+6. $mail->AddAttachment("files/files.zip"; 
+7. $mail->AddAttachment("files/img03.jpg"; 
+8. $mail->AddAddress("destino@domain.com", "Destinatario"; 
+9. $mail->IsHTML(true); 
+10. if(!$mail->Send()) { 
+11. echo "Error: " . $mail->ErrorInfo; 
+12. } else { 
+13. echo "Mensaje enviado correctamente"; 
+14. }
+
+
+ahora tenemos que configurar un poco de cosas más, como por ejemplo: 
+linea 1: Cambiar por el mail de la persona que envia el correo (remitente) 
+linea 2: Nombre de la persona 
+linea 3: Asunto 
+linea 4: Cuerpo del mensaje en texto plano 
+linea 5: Mensaje en HTML 
+linea 6 y 7: son opcionales, se usan en el caso de que quieran enviar un archivo adjunto. 
+linea 8: mail y nombre de la persona que recibira el correo. 
+y de la 10 en adelante se hace una validacion para ver si el envío del correo es correcto o no, en el caso de que ocurra un error les avisará y les dirá el porqué. 
+
+bien, eso es todo para hacer un envío de mail usando el smtp de gmail. 

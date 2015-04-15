@@ -1,0 +1,204 @@
+body{
+	font-family: 'Arial', sans-serif;
+    font-size:12px;
+    color: #000;
+    text-shadow: none;
+    text-align:justify;
+}
+
+h1 {
+    font-size:18px;
+    margin:2px;
+}
+
+h2, h2 a{
+    font-size:16px;
+    margin:2px;
+    color:#000;
+}
+
+h3 {
+    font-size:14px;
+    margin:2px;
+}
+
+#logo {
+	width:100px;
+}
+
+.siguenos{
+    margin-top:0px;
+}
+    .siguenos h3 {
+        display:inline-block;
+        color:#000;
+        font-size:14px;
+    }
+   .siguenos img { width:20px; height:20px;}
+
+
+.h3_titulo_listado {
+    background:#FEBA02;
+    color:#FFF;
+    line-height:30px;
+    font-size:18px;
+    text-align:center;
+    font-weight:normal;
+}
+
+.h3_titulo_listado_destacado {
+    background:#84A8FC;
+    color:#FFF;
+    line-height:30px;
+    font-size:18px;
+    text-align:center;
+    font-weight:normal;
+}
+
+
+.lista_alojamientos_imagen {
+     vertical-align: top;
+     float:left;
+}
+
+.lista_alojamientos_imagen img {
+     width:100px;
+     height:75px;
+     margin:5px;
+     vertical-align: top;
+     float:left;
+}
+
+.categoria {
+    font-size:10px;
+    display: block;
+}
+
+
+/* Paginador Producto*/
+#paginador_producto{
+    width:100%;
+    margin:10px auto;
+    float:right;
+    text-align: right;
+/*    border:1px solid red; */
+}
+
+#paginador_producto a:link, #paginador_producto a:visited {
+    color: #000;
+    text-decoration:none;
+    text-align:left;
+    font-size:12px;
+    line-height: 10px;
+    padding:0px 2px;
+}
+
+#paginador_producto a:hover { color: #000;     background:#76C5F0;}
+
+#paginador_producto .pag_selected {
+    font-size:12px;
+    font-weight: bold; 
+    background:#76C5F0;
+}
+
+
+.datos_contacto{
+    width: 100%;
+    margin:0px;
+    font-family:'Arial','sans-serif';
+    font-size: 12px;
+    font-weight:bold;
+}
+.datos_contacto img{
+    width:22px;
+    height:12px;
+    margin:0px;
+}
+
+.icono_servicios{
+    width:120px;
+    height:38px;
+    overflow:hidden;
+    font-size: 11px;
+    text-align:left;
+    display:inline-block;
+    vertical-align:middle;
+    line-height: 42px;
+    color: #001860;
+}
+
+.titulo_destacado {
+font-size: 18px;
+font-family: 'Arial','snas-serif';
+font-weight: normal;
+color: #FFF;
+text-align: center;
+background: #84A8FB;
+line-height: 30px;
+}
+
+.img_galeria {
+    width:700px;
+}
+
+
+
+
+
+
+#frm_contacto input{
+    width:285px;
+    outline:1px solid #555;
+    border:0px;
+    background:#FFF;
+    line-height:20px;
+    padding: 3px;
+    margin:5px;
+/*  margin-top:-15px;*/
+}
+
+#frm_contacto input[type="text"]{
+    height:22px;
+    line-height:22px;
+    margin:5px 0px; 
+    width:150px;
+}
+
+#frm_contacto input[type="checkbox"]{
+    outline:1px solid #FFF;
+}
+
+#frm_contacto input[type="submit"]{
+    background:#333;
+    cursor:pointer;
+    color:#FFF;
+    width:290px;
+}
+#frm_contacto input[type="submit"]:hover{
+    background:#9DE33E;
+    color:#333;
+}
+
+
+#frm_contacto textarea{
+    outline:1px solid #555;
+    border:0px;
+    background:#FFF;
+    width:285px;
+    height:150px;
+    padding: 3px;
+    margin:5px;
+}
+
+#frm_contacto input[type="text"]:focus{ 
+    background-color:#F9EDBE;
+    outline:1px solid #555; 
+    height:26px;
+    line-height:26px;
+
+}
+
+label.error { float: none; color: red; width:1px; font-size:12px; display:inline-block; float:right; visibility:hidden;top:0px; height:1px; overflow:hidden;}
+
+#frm_contacto .error { outline:1px solid #FF0000; background:#F7CBCB;}
+#frm_contacto input[type="checkbox"].error{ outline:1px solid #FF0000;}

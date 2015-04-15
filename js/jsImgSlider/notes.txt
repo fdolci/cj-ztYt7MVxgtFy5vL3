@@ -1,0 +1,10 @@
+
+JavaScript Image Slider - Release v.2012.9.11
+
+- The home page for this component is: http://www.menucool.com/javascript-image-slider. The online instructions are for the latest release only.
+
+- It is free to use the slider with basic features. 
+
+- Utilizing the advanced features (integrated thumbnails, video support, and build/update on the fly) requires purchasing a valid license. You can use Notepad to open the js-image-slider.js file, and replace the license property with the acquired license. This should be done before the slider going live in production.
+
+- The license entitles a website to use any or all of Menucool sliders (jQuery Slider, Thumbnail Slider, JavaScript Image Slider, Content Slider, and Zoom Slider), and it is valid forever with no requirement to renew.

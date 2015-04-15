@@ -1,0 +1,153 @@
+<?php
+    $cat_id = 0;
+    $mostrar_en_home = 1;
+    include_once(ROOT.'/inc/inc_publicidad.php');
+
+    list($url_amigable,$extension) = explode('.', end($ruta));
+
+    $ubicacion = $xurl['provincia']['nombre'];
+    $familia_id = $xurl['familia']['id'];
+
+    if ( $familia_id==0 ) {
+        $Sumario = $DatosEmpresa['sumario_home'];
+
+        $mTitle          = '';
+        $mRobots         = '';
+        $mKeywords       = '';
+        $mDescription    = '';
+
+    } else {
+        $Sumario = "<h3>Directorio de {$xurl['familia']['nombre']} en $ubicacion </h3>";
+        if(!empty($xurl['familia']['sumario'])) {
+            $Sumario.="<b>".$xurl['familia']['nombre'].' en '.$ubicacion."</b> ".$xurl['familia']['sumario'];
+        } else {
+            $Sumario.="Bienvenidos a <b>entodas.com</b>, un nuevo directorio de empresas concebido para llegar a ser el mayor ranking online de negocios en Costa Rica. 
+                    Un portal donde podrás dar a conocer tus productos y servicios. Utiliza nuestro buscador de empresas para encontrar rápidamente el mejor lugar, 
+                    producto, servicio o profesional que necesitas en cada momento.";
+        }
+        
+        $mTitle          = $xurl['familia']['meta-title'];
+        $mRobots         = $xurl['familia']['meta-robots'];
+        $mKeywords       = $xurl['familia']['meta-keywords'];
+        $mDescription    = $xurl['familia']['meta-description'];
+
+    }
+
+
+    if($xurl['provincia']['id']>0){
+        $prov_url = "/{$xurl['provincia']['url']}";
+    } else {
+        $prov_url = "";
+    }
+
+
+
+    $sql = "select * from familias where parent_id='$familia_id' and activo=1 order by nombre1 ASC";
+    $rs  = $db->Execute($sql);
+    $xFam = $rs->GetRows();
+
+    foreach($xFam as $x){
+        $z = array();
+        $z['id']     = $x['id'];
+        $z['nombre'] = $x['nombre1'];
+        
+        $z['cuantos'] = 0;
+
+        if( $familia_id==0 ) {
+            //------------------------------------------------------------------
+            //                                               Listado de Familias
+            //------------------------------------------------------------------
+            $ciudad_url  = '';
+            if( $xurl['provincia']['id']==0 ){
+                //------------------------------------------------------------------
+                //                                                   En Todo el País
+                //------------------------------------------------------------------
+                // Cuantos anuncios hay por familia ??
+                $sql = "select  count(distinct producto_id) as cuantos from productos_familias where familia_id='{$z['id']}' ";
+                $rs  = $db->SelectLimit($sql,1);
+                $hay = $rs->FetchRow();
+               
+                if($hay){ $z['cuantos'] = $hay['cuantos']; }
+
+            } else {
+
+                if($xurl['ciudad']['id']>0){
+                    $cond_ciudad = "and productos.ciudad_id='{$xurl['ciudad']['id']}'";
+                    $ciudad_url = "/{$xurl['ciudad']['url']}";
+                } else {
+                    $cond_ciudad = '';
+                    $ciudad_url  = '';
+                }    
+                //------------------------------------------------------------------
+                //                                           En una Provincia / Ciudad
+                //------------------------------------------------------------------
+                $sql = "select count(distinct producto_id) as cuantos from productos_familias
+                            left join productos on productos_familias.producto_id = productos.id 
+                            where productos_familias.familia_id='{$z['id']}'
+                            and productos.provincia_id = '{$xurl['provincia']['id']}' $cond_ciudad";
+
+                $rs  = $db->SelectLimit($sql,1);
+                $hay = $rs->FetchRow();
+                if($hay){ $z['cuantos'] = $hay['cuantos']; }
+
+            } //if( $xurl['provincia']['id']==0 )
+
+            $familia_url = '';
+
+        } else {
+
+            //------------------------------------------------------------------
+            //                                            Listado de SbFamilias
+            //------------------------------------------------------------------
+            $familia_url = '/'.$xurl['familia']['url'];
+            if( $xurl['provincia']['id']==0 ){
+                // Cuantos anuncios hay por familia ??
+                $sql = "select count(distinct producto_id) as cuantos 
+                        from productos_familias
+                        where subfamilia_id='{$z['id']}' ";
+                $rs  = $db->SelectLimit($sql,1);
+                $hay = $rs->FetchRow();
+                if($hay){ $z['cuantos'] = $hay['cuantos']; }
+            } else {
+
+                if($xurl['ciudad']['id']>0){
+                    $cond_ciudad = "and ciudad_id='{$xurl['ciudad']['id']}'";
+                    $ciudad_url = "/{$xurl['ciudad']['url']}";
+                } else {
+                    $cond_ciudad = '';
+                }    
+
+                // Cuantos anuncios hay por familia ??
+                $sql = "select count(distinct producto_id) as cuantos from productos_familias
+                        left join productos on productos_familias.producto_id = productos.id 
+                        where productos_familias.subfamilia_id='{$z['id']}'
+                        and productos.provincia_id = '{$xurl['provincia']['id']}' $cond_ciudad";
+
+                $rs  = $db->SelectLimit($sql,1);
+                $hay = $rs->FetchRow();
+                if($hay){ $z['cuantos'] = $hay['cuantos']; }
+            }    
+        } // $familia_id==0
+
+        $z['url']    = URL.$prov_url.$ciudad_url.$familia_url.'/'.$x['urlamigable1'];        
+        
+        $Familias[]  = $z;
+    }
+    
+    if($xurl['provincia']['id']>0){
+        $sql = "select * from ciudades where parent_id='{$xurl['provincia']['id']}' order by locacion ASC";
+        $rs  = $db->Execute($sql);
+        $Ciudades = $rs->GetRows();
+
+        $select_ciudades = "<select name='ciudad_id' id='selector_ciudad'>";
+        $select_ciudades.= "<option value='' >Todas las Ciudades</option>";
+            foreach ($Ciudades as $c){
+                if($xurl['ciudad']['id'] == $c['id']) { $sel='selected=selected'; } else { $sel=''; }
+                $select_ciudades.= "<option value='{$c['urlfriendly']}' $sel>{$c['locacion']}</option>";
+            }
+        $select_ciudades.= "</select>";
+    }
+
+    include_once(ROOT.'/html/menu_familias.html.php');
+
+?>
