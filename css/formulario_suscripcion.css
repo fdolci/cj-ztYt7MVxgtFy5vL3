@@ -1,0 +1,84 @@
+#ajax_formulario_suscripcion {
+	width:90%;
+	border:1px solid #333;
+	margin-top:30px;
+	padding:10px;
+}
+	#ajax_formulario_suscripcion h2 {
+		background:url('../img/formulario_rapido.jpg') top left no-repeat;
+		padding-left:50px;
+		font-size:14px;
+		color:#7CA70A;
+		height:40px;
+		line-height:35px;
+		font-weight:bold;
+		width:220px;
+		overflow:hidden;
+		margin-bottom:3px;
+		margin-top:4px;
+	}	
+	
+
+#ajax_formulario_suscripcion input{
+    width:95%;
+    outline:1px solid #555;
+	border:0px;
+	background:#FFF;
+	line-height:20px;
+	padding: 3px;
+	margin:5px;
+}
+
+#ajax_formulario_suscripcion input[type="text"]{
+	height:22px;
+	line-height:22px;
+	margin:5px 0px;	
+	width:150px;
+}
+
+#ajax_formulario_suscripcion input[type="submit"]{
+    background:#333;
+    cursor:pointer;
+    color:#FFF;
+    width:98%;
+}
+#ajax_formulario_suscripcion input[type="submit"]:hover{
+    background:#9DE33E;
+    color:#333;
+}
+
+
+#ajax_formulario_suscripcion input[type="text"]:focus{ 
+    background-color:#F9EDBE;
+    outline:1px solid #555;	
+	height:26px;
+	line-height:26px;
+
+}
+
+
+#captcha {display:none;}
+
+
+/* para jQuery Validation */
+label { float: left; width:180px; text-align:left;padding-left:5px;margin-top: 7px;margin-bottom:-7px; font-size:14px;}
+label.error { float: none; color: red; width:1px; font-size:12px; display:inline-block; float:right; visibility:hidden;top:0px; height:1px; overflow:hidden;}
+
+
+#ajax_formulario_suscripcion .error { outline:1px solid #FF0000; background:#F7CBCB;}
+#ajax_formulario_suscripcion input[type="checkbox"].error{ outline:1px solid #FF0000;}
+
+p { clear: both; }
+em { font-weight: bold; padding-right: 1em; vertical-align: top; color:red;}
+
+
+.input_error {
+	border:2px solid #FF0000;
+	background:#F7CBCB;
+}
+
+.input_no_error {
+	border:1px solid #C0C0C0;
+	background:#FFF;
+}
+

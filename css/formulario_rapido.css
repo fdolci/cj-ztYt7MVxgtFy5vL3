@@ -1,0 +1,132 @@
+#ajax_formulario_rapido {
+	width:100%;
+}
+	#ajax_formulario_rapido h2 {
+		background:url('../img/formulario_rapido.jpg') top left no-repeat;
+		padding-left:50px;
+		font-size:14px;
+		color:#7CA70A;
+		height:40px;
+		line-height:35px;
+		font-weight:bold;
+		width:220px;
+		overflow:hidden;
+		margin-bottom:3px;
+		margin-top:0px;
+	}	
+	
+
+#ajax_formulario_rapido input{
+    width:95%;
+    outline:1px solid #555;
+	border:0px;
+	background:#FFF;
+	line-height:20px;
+	padding: 3px;
+	margin:5px;
+}
+
+#ajax_formulario_rapido input[type="text"]{
+	height:22px;
+	line-height:22px;
+	margin:5px 0px;	
+	width:150px;
+}
+
+#ajax_formulario_rapido input[type="checkbox"]{
+    outline:1px solid #FFF;
+}
+
+#ajax_formulario_rapido input[type="submit"]{
+    background:#333;
+    cursor:pointer;
+    color:#FFF;
+    width:98%;
+}
+#ajax_formulario_rapido input[type="submit"]:hover{
+    background:#9DE33E;
+    color:#333;
+}
+
+
+#ajax_formulario_rapido textarea{
+    outline:1px solid #555;
+	border:0px;
+	background:#FFF;
+    width:95%;
+    height:100px;
+	padding: 3px;
+	margin:5px;
+}
+
+#ajax_formulario_rapido input[type="text"]:focus{ 
+    background-color:#F9EDBE;
+    outline:1px solid #555;	
+	height:26px;
+	line-height:26px;
+
+}
+
+
+#captcha {display:none;}
+
+
+/* para jQuery Validation */
+label { float: left; width:180px; text-align:left;padding-left:5px;margin-top: 7px;margin-bottom:-7px; font-size:14px;}
+label.error { float: none; color: red; width:1px; font-size:12px; display:inline-block; float:right; visibility:hidden;top:0px; height:1px; overflow:hidden;}
+
+
+#ajax_formulario_rapido .error { outline:1px solid #FF0000; background:#F7CBCB;}
+#ajax_formulario_rapido input[type="checkbox"].error{ outline:1px solid #FF0000;}
+
+p { clear: both; }
+em { font-weight: bold; padding-right: 1em; vertical-align: top; color:red;}
+
+
+/*	
+	#ajax_formulario_rapido input {
+	    border-radius: 6px;    
+		width:206px;
+		height:20px;
+		padding:2px;
+		margin: 2px 0px;
+		font-family: Arial;
+		font-size:12px;
+		color:#555;
+		clear:both;
+	}	
+	#ajax_formulario_rapido textarea {
+	    border-radius: 6px;    
+		width:206px;
+		height:50px;
+		padding:2px;
+		margin: 2px 0px;
+		font-family: Arial;
+		font-size:12px;
+		resize: none; 
+		color:#555;
+		clear:both;
+	}	
+input#boton_enviar{
+	width:60px;
+	clear:both;
+	height:30px;
+	line-height:25px;
+	border-radius: 2px;    
+	background:#9DE33E;
+	color:#333;
+	display:block;
+}
+*/
+
+
+.input_error {
+	border:2px solid #FF0000;
+	background:#F7CBCB;
+}
+
+.input_no_error {
+	border:1px solid #C0C0C0;
+	background:#FFF;
+}
+

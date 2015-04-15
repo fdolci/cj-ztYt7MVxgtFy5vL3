@@ -1,0 +1,308 @@
+h1, h2, h3 {
+    overflow:hidden;
+    clear:none;
+    font-family: 'Calibri', 'Arial Narrow', 'sans-serif';
+    margin: 10px 0px;
+    font-weight:bold;
+}
+
+h2{ 
+    margin-top:10px;
+    font-size:15px;
+    line-height:20px;
+}
+
+h3 { 
+    margin-top:10px;
+    font-size:14px;
+    line-height:20px;
+}
+
+
+.tab_container h2{ 
+    margin-top:10px;
+    font-size:18px;
+    line-height:20px;
+    background:#E5F2FA;
+    padding:5px;
+}
+
+.tab_container h3 { 
+    margin-top:10px;
+    font-size:14px;
+    line-height:20px;
+    background:#F2FAFC;
+    padding:5px;
+}
+
+
+.tab_container ul {
+    list-style: circle;
+    font-family: 'Calibri', 'Arial';
+    font-size:14px;
+    color: #6E6E6E;
+    margin-left: 60px;    
+}
+
+
+.tab_container p{ 
+    font-family: 'Calibri', 'Arial';
+    font-size:14px;
+	margin:0px;
+	
+    padding:0px;
+    line-height:15px;
+}
+
+.bold{
+    font-weight:bold;
+    font-family: 'Calibri', 'Arial';
+    font-size:14px;
+}
+
+.italic {
+    font-style:oblique;
+}
+
+.underline {
+    text-decoration:underline;
+}
+
+#p_ficha .fechas{
+    float:right;
+    margin-right:10px;
+}
+
+#p_ficha .ficha_titulo{
+    font-weight:bold;
+    font-size:13px;
+}
+
+.tr1{
+    background:#E5F2FA;
+    height:30px;
+    line-height:30px;
+}
+
+.tr2{
+    background:#FFF;
+    height:30px;
+    line-height:30px;
+}
+
+blockquote {
+    color: #001860;
+    padding:5px;
+    border:1px dotted #555;
+    border-radius:6px;
+    background:#F7F7F7;
+}
+blockquote p{
+    color: #001860;
+    font-size: 16px;
+    text-align: center;
+    font-weight:bold;
+    font-style: oblique;
+}
+
+blockquote h2, blockquote h3, blockquote h4 {
+    background:none;
+}
+
+em {
+    color:#001860;
+	padding-right:0px;
+}
+
+.img_pesta{
+    margin-right:3px;
+    height:20px;
+    width:20px;
+    margin-bottom:2px;
+}
+
+.detalle_hotel{
+
+}
+.img_detalle_hotel{
+    height:300px; 
+    width:300px;
+    max-width:300px;
+    padding:10px;
+}
+
+.logo_ra {
+    float:right;
+    font-size:10px;
+    font-weight: normal;
+}
+.logo_ra img{
+    height:20px;
+}
+
+#btn_submit{
+		background:#333;
+		cursor:pointer;
+		color:#FFF;
+		width:150px;
+		margin:15px auto;
+		line-height: 30px;
+		margin-right: 12px;
+}
+	#btn_submit:hover{
+		background:#9DE33E;
+		color:#333;
+	}
+
+#mensaje_aviso_nuevo {
+	background: #C9FCD3;
+	padding:20px;
+	font-size:18px;
+}
+
+#summary {
+	color:#FF0000; 
+	font-size:16px; 
+	font-weight:bold;
+	line-height:24px; 
+	border:1px solid #FF0000;
+	display:none;
+	margin-bottom:20px;
+	background:#F7D3D3;
+	width:960px;
+}
+
+/* FICHA DE AUTORIDADES */
+h1.autoridades {
+	font-size:20px;
+	color:#000;
+	background:none;
+	padding-left:0px;
+	margin:0px;
+}
+h2.autoridades {
+	font-size:18px;
+	color:#000;
+	background:none;
+	padding-left:5px;
+	margin:0px;
+}
+h3.autoridades {
+	font-size:16px;
+	color:#000;
+	background:none;
+	padding-left:10px;
+	margin:0px;
+}
+
+.autoridades_imagen_perfil{
+	max-height:100px;
+	width:70px;
+	padding:10px;
+}
+
+.autoridades_nombre {
+	color:#000; 
+	font-weight:bold; 
+	font-size:12px;
+}
+
+.autoridades_descripcion {
+	font-weight:normal;
+	line-height:15px;
+	font-size:11px;
+	font-family:"Courier New";
+	margin-bottom:10px;
+}
+
+
+/* FICHA DE SPONSOR */
+.sponsor{
+	border:1px solid #DDD;
+	width:150px;
+	padding:5px;
+	height:300px;
+	overflow:hidden;
+	display:inline-block;
+	vertical-align:top;
+	margin:5px;
+	
+}
+h1.sponsor {
+	font-size:20px;
+	color:#000;
+	background:none;
+	padding-left:0px;
+	margin:0px;
+}
+h2.sponsor {
+	font-size:18px;
+	color:#000;
+	background:none;
+	padding-left:5px;
+	margin:0px;
+}
+h3.sponsor {
+	font-size:16px;
+	color:#000;
+	background:none;
+	padding-left:10px;
+	margin:0px;
+}
+
+.sponsor_logo{
+	height:150px; 
+	width:150px;
+}
+
+.sponsor_nombre {
+	color:#000; 
+	font-weight:bold; 
+	font-size:12px;
+	text-align:center;
+	width:150px;
+	overflow:hidden;
+}
+
+.sponsor_descripcion {
+	font-weight:normal;
+	line-height:15px;
+	font-size:11px;
+	font-family:"Courier New";
+	margin-bottom:10px;
+	text-align:left;
+}
+
+
+
+#banner_ra{
+	font-size:16px;
+	margin-bottom:10px;
+}
+
+#banner_ra_2{
+	margin-top:10px;
+	font-size:16px;
+}
+
+#cuenta_twitter{
+	background:url('../img/icon-twitter.png') center left no-repeat;
+	padding-left:30px;
+	font-weight:bold;
+}
+	#cuenta_twitter a{
+		color:#00ACED;
+		background:#FFF;
+		margin-left:0px;
+	}
+	#cuenta_twitter a:hover{
+		background:none;
+	}	
+	
+	
+.ctitulo {
+    text-align:right;
+    font-weight:bold;
+    line-height:30px;
+    font-size:12px;
+}

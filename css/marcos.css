@@ -1,0 +1,21 @@
+#img_marcos {
+	width:300px;
+	height:200px;
+	border:1px solid #FF9900;
+	
+}
+
+h1 {
+	font-family:'Arial';
+	font-size:32px;
+	color:#FF0000;
+	width:600px;
+	text-align: left;
+}
+
+#contenedor_img {
+	background:#CCC;
+	width:800px;
+	height:500px;
+	
+}

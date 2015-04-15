@@ -1,0 +1,28 @@
+<h3>Alojamientos Recomendados 
+	<span class='logo_ra'>
+		powered by <a href='http://www.RosarioAlojamientos.com' target='_ra' title='RosarioAlojamientos.com'>
+		<img src='<?php echo URL;?>/img/rosario_alojamientos.png'></a>
+	</span>
+</h3>
+<?php if (!empty($Alojamientos)) { ?>
+	<table width='100%' >
+
+	<?php foreach($Alojamientos as $x){ ?>
+
+		<tr style='margin-bottom:20px; border-top:1px solid #666;'>
+			<td >
+				<h3><a href='<?php echo $x['href'];?>' title='<?php echo $x['titulo'];?>' target='_ra'><?php echo $x['titulo'];?></a></h3>
+				<span class='detalle_hotel'><?php echo nl2br($x['descripcion']);?></span>
+			</td>
+
+			<td >
+				<a href='<?php echo $x['href'];?>' title='<?php echo $x['titulo'];?>' target='_ra'>
+				<img src='<?php echo VER_ALOJAMIENTOS.'/'.$x['archivo'];?>' class='img_detalle_hotel' title="<?php $x['titulo'];?>" />
+				</a>
+			</td>
+
+		</tr>
+	<?php  } //endforeach ?>
+	
+	</table>
+<?php } //endif ?>

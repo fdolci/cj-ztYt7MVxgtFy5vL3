@@ -1,0 +1,98 @@
+	#bloque_login{
+		background:#E7E8EA;
+		padding-bottom:5px;
+		text-align:center;
+	}
+
+	#bloque_login h3 {
+		background:#DD323B;
+		color:#FFF;
+		line-height:20px;
+		font-size:14px;
+		padding-left:5px;
+	}
+	#bloque_login a{
+		padding: 3px;
+		color:#62BBE6;
+		font-size:11px;
+		font-weight:bold;
+		margin:10px auto ;
+		text-decoration:underline;
+	}
+
+	#bloque_login a:hover {
+		color:#000;
+		
+	}
+
+.formulario_login {
+	width:100%;
+}
+
+	.formulario_login h2 {
+		font-size:15px;
+		color:#333;
+		line-height:35px;
+		font-weight:bold;
+		margin-bottom:20px;
+		margin-top:5px;
+	}	
+	
+
+
+
+.formulario_login input{
+    width:124px;
+    outline:1px solid #555;
+	border:0px;
+	background:#FFF;
+	line-height:20px;
+	padding: 3px;
+	margin:5px;
+}
+
+
+.formulario_login input[type="submit"]{
+    background:#62BBE6;
+    cursor:pointer;
+    color:#FFF;
+    width:130px;
+}
+.formulario_login input[type="submit"]:hover{
+    background:#9DE33E;
+    color:#333;
+}
+
+
+
+.captcha {display:none;}
+
+
+/* para jQuery Validation */
+label { float: left; width:180px; text-align:left;padding-left:5px;margin-top: 7px;margin-bottom:-7px; font-size:12px;}
+label.error { float: none; color: red; width:1px; font-size:12px; display:inline-block; float:right; visibility:hidden;top:0px; height:1px; overflow:hidden;}
+
+
+.formulario_login .error { outline:1px solid #FF0000; background:#F7CBCB;}
+.formulario_login input[type="checkbox"].error{ outline:1px solid #FF0000;}
+
+p { clear: both; }
+em { font-weight: bold; padding-right: 1em; vertical-align: top; color:red;}
+
+
+
+.input_error {
+	border:2px solid #FF0000;
+	background:#F7CBCB;
+}
+
+.input_no_error {
+	border:1px solid #C0C0C0;
+	background:#FFF;
+}
+
+.titulos_form{
+	line-height:30px;
+	font-weight:bold;
+	text-align:right;
+}

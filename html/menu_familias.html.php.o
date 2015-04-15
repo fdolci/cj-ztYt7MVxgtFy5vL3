@@ -1,0 +1,121 @@
+<style type="text/css">
+#nav {
+    float: left;
+    width: 218px;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    margin-left: 0px;
+    list-style-type: none;
+}
+#nav li a {
+    display: block;
+    padding: 10px 15px;
+    background: #ccc;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #999;
+    text-decoration: none;
+    color: #000;
+}
+#nav li a:hover, #nav li a.active {
+    background: #999;
+    color: #fff;
+}
+#nav li ul {
+    display: none; 
+    margin-left: 0px;
+    list-style-type: none;
+}
+#nav li ul li a {
+/*    padding: 10px 25px; */
+    background: #ececec;
+    border-bottom: 1px dotted #ccc;
+}
+</style>
+
+
+<?php echo $select_provincias;?>
+
+    <?php if(isset($select_ciudades)) { ?>
+      <?php echo $select_ciudades; ?>
+    <?php } ?>  
+
+
+
+<ul id="nav">
+    <?php foreach($Familias as $Fam) {?>
+      <?php if($Fam['id'] == $xurl['familia']['id']) {
+        $activo = 'class=active';
+        $ul_activo = "style='display:block;'";
+      } else {
+        $activo='';
+        $ul_activo = "";
+      }?>
+      <li >
+        <a href="#" id='id_<?php echo $Fam['id'];?>' <?php echo $activo;?> ><?php echo $Fam['nombre'];?> [<?php echo $Fam['cuantos'];?>]</a>
+        <?php if(!empty($Fam['child'])){ ?>
+          <ul <?php echo $ul_activo;?>>
+            <?php foreach($Fam['child'] as $child){ ?>
+              <li><a href="<?php echo $child['url'];?>"><?php echo $child['nombre'];?> [<?php echo $child['cuantos'];?>]</a></li>
+
+            <?php } //end foreach $Fam['child'];?>
+          </ul>
+        <?php } // endif !empty($Fam['child'] ?>
+      </li>
+
+  <?php } //end foreach $Familias ?>
+
+</ul>
+
+
+<script type="text/javascript">
+  $(document).ready(function () {
+      $('#nav > li > a').click(function(){
+        if ($(this).attr('class') != 'active'){
+          $('#nav li ul').slideUp();
+          $(this).next().slideToggle();
+          $('#nav li a').removeClass('active');
+          $(this).addClass('active');
+        }
+      });
+
+
+    $("#selector_provincia").change(function () {
+        var jurl        = "<?php echo URL;?>";
+        var jprovincia  = $("#selector_provincia").val();
+        var jfamilia    = "<?php echo $xurl['familia']['url'];?>";
+        var jsubfamilia = "<?php echo $xurl['subfamilia']['url'];?>";
+        var redireccion = jurl+'/'+jprovincia;
+        if (jfamilia!=''){
+            redireccion = redireccion + '/'+jfamilia;
+            if(jsubfamilia!=''){
+                redireccion = redireccion + '/'+jsubfamilia;
+            }
+        }
+        document.location.href=redireccion;
+
+     });
+
+    <?php if(isset($select_ciudades)) { ?>
+        $("#selector_ciudad").change(function () {
+            var jciudad     = $("#selector_ciudad").val();
+            var jurl        = "<?php echo URL;?>";
+            var jprovincia  = "<?php echo $xurl['provincia']['url'];?>";
+            var jfamilia    = "<?php echo $xurl['familia']['url'];?>";
+            var jsubfamilia = "<?php echo $xurl['subfamilia']['url'];?>";
+            var redireccion = jurl+'/'+jprovincia+'/'+jciudad;
+            if (jfamilia!=''){
+                redireccion = redireccion + '/'+jfamilia;
+                if(jsubfamilia!=''){
+                    redireccion = redireccion + '/'+jsubfamilia;
+                }
+            }
+            document.location.href=redireccion;
+        });
+    <?php } ?>  
+
+
+  });
+</script>
+
+<?php //pr($Familias);?>

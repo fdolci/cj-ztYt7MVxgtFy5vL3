@@ -1,0 +1,40 @@
+<h3>Alojamientos Recomendados 
+	<span class='logo_ra'>
+		powered by <a href='http://www.RosarioAlojamientos.com' target='_ra' title='RosarioAlojamientos.com'>
+		<img src='<?php echo URL;?>/img/rosario_alojamientos.png'></a>
+	</span>
+</h3>
+
+<?php
+	$url_api = 'http://www.lionel.x/alojamientos/api/promo_cj/promo_cj.php?evento_id='.$Producto['id'];
+	$a       = file_get_contents($url_api);
+	$r       = base64_decode($a);
+	$result  = json_decode($r,true);
+//	pr($result,1);
+	
+	$contador_familia = 0;
+?>	
+	<div class="accordion" id="accordion2">
+	
+	<?php foreach($result as $familia=>$r){ ?>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+			  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion<?php echo $contador_familia;?>" href="#collapse<?php echo $contador_familia;?>">
+				&raquo; <?php echo $familia;?>
+			  </a>
+			</div>
+			<?php $in = iif($contador_familia==0,'in','');?>
+			<div id="collapse<?php echo $contador_familia;?>" class="accordion-body collapse <?php echo $in;?>">
+			  <div class="accordion-inner">
+
+					<?php foreach ($r as $d){ ?>
+						<?php echo $d;?>
+					<?php } ?>	
+			  </div>
+			</div>
+		</div>
+		<?php $contador_familia++;?>
+	
+	<?php } // endforeach ?>
+	</div>
+	

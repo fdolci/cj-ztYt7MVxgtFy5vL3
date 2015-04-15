@@ -1,0 +1,156 @@
+/*              Accordion RA          */
+.accordion-heading{
+	background:#F5F5F5;
+}
+.accordion-toggle{
+	font-size:14px;
+	font-weight:bold;
+}	
+	
+.tab_container h2 {
+	margin-top: 10px;
+	font-size: 18px;
+	line-height: 20px;
+	background: none;
+	padding: 5px;
+}
+
+
+.c1_ra {
+    min-height: 130px;
+	height:100%;
+    background: #FFF;
+    border: solid 1px #CCC;
+    padding: 5px;
+    position: relative;
+}
+    .c1_ra img{
+        width:210px;
+        height:113px;
+    }
+
+    .c1_ra h2{
+        line-height:30px;
+        margin:0px;
+    }
+
+
+    .c1_ra h3{
+        font-size:18px;
+        font-family: 'Arial','snas-serif';
+        font-weight: normal;
+        color:#FFF;
+        text-align:center;
+        background: #FEBA02;
+        line-height:30px;
+        margin-top:5px;
+    }
+    .cl_ra-sombra {
+        width: 220px;
+        height: 16px;
+        background: url('http://www.RosarioAlojamientos.com/img/sombra_c1.jpg') top no-repeat;
+        padding-left: 5px;
+        margin: 0px 0px 5px 0px;
+    }
+    .cl_ra-sombra-grande {
+        width: 620px;
+        height: 16px;
+        background: url('http://www.RosarioAlojamientos.com/img/sombra_c1_grande.jpg') top no-repeat;
+/*        padding-left: 5px;
+        margin: 0px 0px 5px 0px; */
+    }
+
+
+.lista_alojamientos_ra_imagen {
+    display:inline-block; 
+    width:150px;
+    height:110px;
+    vertical-align:top;
+    margin:0px;
+    margin-right:20px;
+}
+
+.lista_alojamientos_ra_detalle {
+    display:inline-block; 
+    width:450px;
+    height:80px;
+}
+    .lista_alojamientos_ra_detalle h1{
+        font-size:18px;
+        font-family: 'Arial','sans-serif';
+        font-weight:normal;
+        margin-top:5px;
+        margin-bottom:5px;
+        color:#003580;
+    }
+    .lista_alojamientos_ra_detalle p{
+        color:#003580;
+        font-size:12px;
+        line-height:14px;
+        text-align: left;
+       /* margin-top:5px; */
+        padding:3px;
+        font-weight:normal;
+        font-family:'Arial','sans-serif';
+        height:100%;
+        overflow:hidden;
+        margin:0px;
+		width:496px;
+    }
+    .lista_alojamientos_ra_detalle .boton, .lista_alojamientos_ra_detalle .boton a{
+        background:#FEBA02;
+        color:#000;
+        font-size:11px;
+        line-height:14px;
+        text-align: center;
+        float:right;
+        padding:3px;
+        width:100px;
+        font-weight:normal;
+        font-family:'Arial','sans-serif';
+    }
+
+
+
+
+
+
+
+	
+h1, h2 {
+    width:500px;
+    overflow:hidden;
+    clear:none;
+}
+
+h2 { 
+    margin-top:10px;
+    font-size:17px;
+}
+
+h3 { 
+    margin-top:10px;
+    font-size:14px;
+}
+
+
+#logo_alojamiento{
+    float:right;
+    width:150px;
+    height:110px;
+}
+
+#miniatura_alojamiento{
+    float:left;
+    margin:5px;
+    width:120px;
+    height:90px;
+}
+
+p  { 
+    font-size:12px;
+/*	margin:10px; */
+	width:640px;
+}
+
+.bold{font-weight:bold; color:#000;}

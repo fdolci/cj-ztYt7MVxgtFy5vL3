@@ -1,0 +1,130 @@
+#comentarios {
+	border-top: 1px solid #CCC;
+	margin-top:20px;
+}
+	#comentarios h2 {
+		background:url('../img/formulario_rapido.jpg') top left no-repeat;
+		padding-left:50px;
+		font-size:14px;
+		color:#7CA70A;
+		height:40px;
+		line-height:35px;
+		font-weight:bold;
+		width:220px;
+		overflow:hidden;
+		margin-bottom:3px;
+		margin-top:0px;
+	}	
+	
+
+#comentarios input{
+    width:95%;
+    outline:1px solid #555;
+	border:0px;
+	background:#FFF;
+	line-height:20px;
+	padding: 3px;
+	margin:5px;
+}
+
+#comentarios input[type="text"]{
+	height:22px;
+	line-height:22px;
+	margin:5px 0px;	
+	width:150px;
+}
+
+#comentarios input[type="checkbox"]{
+    outline:1px solid #FFF;
+}
+
+#comentarios input[type="submit"]{
+    background:#333;
+    cursor:pointer;
+    color:#FFF;
+    width:98%;
+}
+#comentarios input[type="submit"]:hover{
+    background:#9DE33E;
+    color:#333;
+}
+
+
+#comentarios textarea{
+    outline:1px solid #555;
+	border:0px;
+	background:#FFF;
+    width:95%;
+    height:100px;
+	padding: 3px;
+	margin:5px;
+}
+
+#comentarios input[type="text"]:focus{ 
+    background-color:#F9EDBE;
+    outline:1px solid #555;	
+	height:26px;
+	line-height:26px;
+
+}
+
+
+#captcha {display:none;}
+
+
+/* para jQuery Validation */
+label { float: left; width:180px; text-align:left;padding-left:5px;margin-top: 7px;margin-bottom:-7px; font-size:14px;}
+label.error { float: none; color: red; width:1px; font-size:12px; display:inline-block; float:right; visibility:hidden;top:0px; height:1px; overflow:hidden;}
+
+
+#comentarios .error { outline:1px solid #FF0000; background:#F7CBCB;}
+#comentarios input[type="checkbox"].error{ outline:1px solid #FF0000;}
+
+p { clear: both; }
+em { font-weight: bold; padding-right: 1em; vertical-align: top; color:red;}
+
+
+.input_error {
+	border:2px solid #FF0000;
+	background:#F7CBCB;
+}
+
+.input_no_error {
+	border:1px solid #C0C0C0;
+	background:#FFF;
+}
+
+.comment {
+	display:block;
+	padding:10px;
+	border: 1px solid #CCC;
+	margin-bottom:5px;
+}
+
+.coment_fecha {
+	width:40%;
+	display:inline-block;
+
+}
+
+.coment_user {
+	width:40%;
+	display:inline-block;
+
+}
+
+.coment_number {
+	width:50px;
+	display:inline-block;
+	font-size: 20px;
+	font-weight: bold;
+
+}
+
+.comentario {
+	padding-left:20px;
+	padding-top:10px;
+	font-style: oblique;
+	display:block;
+
+}

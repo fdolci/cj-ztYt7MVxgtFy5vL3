@@ -1,0 +1,30 @@
+<?php
+    // Crea el menu de Familias de Productos para la agencia
+    $Familias = MenuFamilias( 0 );
+    // $Familias = MenuFamilias( $familia_id );
+?>
+<div id='menu_familias'>
+<h3 style='background:#E67817;color:#FFF;line-height:20px;font-size:14px;padding-left:5px;'>Alojamientos</h3>
+
+<ul  id='menu_familias' >
+    <?php foreach($Familias as $clave=>$valor){ ?>
+        <li style='z-index:0;'>
+            <?php if (!empty($valor['child'])){ ?>
+                <a href='#' style='z-index:0;'><?php echo $valor['nombre'];?></a>
+                <ul class='nivel2'>
+                <?php foreach($valor['child'] as $clave2=>$valor2){ ?>
+                    <li>
+                        <a href='<?php echo $valor2['href'];?>' style='z-index:0;'><?php echo $valor2['nombre'];?></a>
+                    </li>
+
+                <?php } // end foreach $Familias ?>
+                </ul>
+            <?php } else { // endif !empty child ?>    
+                <a href='<?php echo $valor['href'];?>' style='z-index:0;'><?php echo $valor['nombre'];?></a>
+            <?php } // endif !empty child ?>    
+        </li>
+
+    <?php } // end foreach $Familias ?>
+
+</ul>
+</div>

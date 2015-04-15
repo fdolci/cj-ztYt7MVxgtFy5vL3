@@ -1,0 +1,515 @@
+.menu_superior{
+	 text-align:right;
+	 color:#FFF;
+	 padding-top:10px;
+	 font-style:oblique;
+	 font-size:16px;
+}
+
+/* menu slide */
+
+#menu_slide{
+	font-size:24px;
+	text-align:left;
+    display:block;
+	color:#000;
+	font-family:'Terminal Dosis';
+}
+#menu_slide .separador{ 
+	height:0px;
+	display:none;
+}
+#menu_slide ul{
+	display:block;
+	float:none;
+	margin:0px;
+    text-align: left;
+    list-style-type:circle;
+}
+
+#menu_slide li{
+	height:120px;
+	background: #FFF;
+    font-size:28px;
+    list-style-type:circle;
+	margin-bottom:2px;
+	vertical-align:middle;
+	text-align:center;
+    display: table;
+	width:240px;
+	
+}
+
+#menu_slide li a{
+    display: table-cell;
+    vertical-align: middle;
+
+	color:#FFF;
+	text-decoration:none;
+}
+
+#menu_slide li a:hover{
+	color:#FF9900;
+}
+
+#menu_slide .fondo_destacado {
+    background-color: #D2E2EE;
+}
+
+#cuadros_derecha ul li img{
+	width:240px;
+	height:120px;
+}
+
+
+/* MENU DERECHA DE LA HOME*/
+ul#menu_derecha_home {
+	display:block;
+	float:none;
+	margin:0px;
+    text-align: left;
+    list-style-type:none;
+	font-size:14px;
+	font-style:oblique;
+	font-weight:bold;
+}
+
+#md_descargas {
+	width:230px;
+	height:30px;
+	background: url('../img/md_descargas.jpg') no-repeat top center;
+	padding:15px 0px;
+	}
+	#md_descargas a{
+		padding-left:70px;
+		color:#FFF;
+		text-decoration:none;
+		text-shadow: 0px 0px 6px #222;
+	}
+	#md_descargas a:hover{
+		color:#333;
+	}
+
+#md_area_clientes {
+	width:230px;
+	height:30px;
+	background: url('../img/md_area_clientes.jpg') no-repeat top center;
+	padding:15px 0px;
+	}
+	#md_area_clientes a{
+		padding-left:70px;
+		color:#FFF;
+		text-decoration:none;
+		text-shadow: 0px 0px 6px #222;
+	}
+	#md_area_clientes a:hover{
+		color:#333;
+	}
+
+	
+
+/* ULTIMAS NOVEDADES MARRON */
+#ultimas_novedades{
+	background: #DCDCDC;
+	box-shadow: 0px 0px 6px #222;
+    border-radius: 6px;    
+	text-align:left;
+    display:inline-block;
+	color:#000;
+    font-weight:normal;
+    margin-left:0px; 
+	padding:10px;
+}
+	#ultimas_novedades h2{
+		font-size:14px;
+		font-weight:bold;
+		color:#000;
+		margin-bottom: 5px;
+		margin-top: 4px;
+		text-align: left;
+		text-shadow: none;	
+		text-transform:uppercase;
+		font-style: oblique;
+		
+	}
+	#ultimas_novedades img{
+		width:69px;
+		float:left;
+		margin:5px;
+		height:69px;
+		vertical-align:50%;
+	}
+
+	#ultimas_novedades ul{
+		display:inline;
+		float:none;
+		clear: both;
+		margin-left:0px;
+		font-size:12px;	
+		color:#333;
+	}
+
+	#ultimas_novedades li{
+		display:inline-block;
+		float:none;
+		padding-left:0px;
+		padding-right:0px;
+		padding-top:3px;    
+		width:100%;
+		height:75px;
+		overflow:hidden;
+		
+	}
+
+	#ultimas_novedades li a{
+		/* display:block;*/
+		color:#333;
+		text-decoration:underline;
+		font-size:13px;	
+		font-weight:normal;
+	}
+
+	#ultimas_novedades li a:hover{
+		color:#000;
+		text-decoration:underline;
+		
+	}
+
+
+/* SUBMENU DERECHA */
+#menu_derecha{
+	background: #DCDCDC;
+	box-shadow: 0px 0px 6px #222;
+    border-radius: 6px;    
+	text-align:left;
+    display:inline-block;
+	color:#000;
+    font-weight:normal;
+    margin-left:0px; 
+	padding:10px;
+}
+	#menu_derecha h2{
+		font-size:14px;
+		font-weight:bold;
+		color:#000;
+		margin-bottom: 5px;
+		margin-top: 4px;
+		text-align: left;
+		text-shadow: none;	
+		text-transform:uppercase;
+		font-style: oblique;
+		
+	}
+	#menu_derecha img{
+		width:69px;
+		float:left;
+		margin:5px;
+		height:69px;
+		vertical-align:50%;
+	}
+
+	#menu_derecha ul{
+		display:inline;
+		float:right;
+		clear: both;
+		margin-left:0px;
+		font-size:12px;	
+		color:#333;
+	}
+
+	#menu_derecha li{
+		display:inline-block;
+		float:none;
+		padding-left:0px;
+		padding-right:0px;
+		padding-top:3px;    
+		width:100%;
+		line-height:30px;
+		overflow:hidden;
+		
+	}
+
+	#menu_derecha li a{
+		/* display:block;*/
+		color:#008DAE;
+		font-family:Arial;
+		text-decoration:none;
+		font-size:14px;	
+		font-weight:bold;
+	}
+
+	#menu_derecha li a:hover{
+		color:#000;
+		text-decoration:underline;
+		
+	}
+
+
+
+
+/* --- OTRAS PUBLICACIONES ---*/
+#otras_publicaciones{
+	text-align:left;
+    display:inline-block;
+	color:#FFF;
+    font-weight:normal;
+    margin-left:0px; 
+	padding:10px;
+}
+	#otras_publicaciones h2{
+		font-size:14px;
+		font-weight:bold;
+		color:#FFF;
+		margin-bottom: 5px;
+		margin-top: 4px;
+		text-align: left;
+		text-shadow: none;	
+		text-transform:uppercase;
+		font-style: oblique;
+		
+	}
+	#otras_publicaciones img{
+		width:69px;
+		float:left;
+		margin:5px;
+		height:69px;
+		vertical-align:50%;
+	}
+
+	#otras_publicaciones ul{
+		display:inline;
+		float:none;
+		clear: both;
+		margin-left:0px;
+		font-size:11px;	
+		color:#E5E5E5;
+	}
+
+	#otras_publicaciones li{
+		background: url('../img/fondo_menu_derecha.jpg') no-repeat top left;
+		display:inline-block;
+		float:none;
+		padding-left:40px;
+		padding-right:0px;
+		padding-top:3px;
+		margin-bottom:5px;
+		width:205px;
+		height:25px;
+		line-height:20px;
+		font-weight:bold;
+		overflow:hidden;
+	}
+
+	#otras_publicaciones li a{
+		/* display:block;*/
+		color:#FFF;
+		text-decoration:none;
+		font-size:13px;	
+		font-weight:normal;
+	}
+
+	#otras_publicaciones li a:hover{
+		color:#333;
+		text-decoration:underline;
+		
+	}
+
+	
+	
+	
+/* MENU menu_footer */
+.menu_footer{
+	font-family:'Terminal Dosis';
+	font-size:14px;
+	text-align:right;
+    display:inline-block;
+	color:#000;
+    font-weight:normal;
+    margin-left:0px; 
+	float:right;
+       
+}
+
+.menu_footer h2{
+	font-size:12px;
+    font-weight:bold;
+    color:#000;
+}
+
+.menu_footer ul{
+	display:inline;
+	float:none;
+	clear: right;
+    
+}
+
+.menu_footer li{
+	display:inline-block;
+	float:none;
+    padding-left:0px;
+    padding-right:10px;
+    padding-top:0px;    
+	line-height: 30px;	
+	height: 30px;
+	vertical-align:middle;
+}
+
+.menu_footer li a{
+	display:block;
+	color:#000;
+	text-decoration:none;
+}
+
+.menu_footer li a:hover{
+	color:#FEBA02;
+	text-decoration:none;
+}
+.menu_footer .selected{
+    color: #000;
+    font-weight:bold;
+	text-decoration:underline;
+}
+.menu_footer .separador{
+	display:none;
+}
+
+
+.separador_n2 {display:none;}
+
+
+
+/* MENU PPAL */
+/* MENU menu_footer */
+#menu_ppal{
+    display:block;
+	color:#000;
+    font-weight:normal;
+    float:right;
+    margin-top:20px;
+}
+
+#menu_ppal ul{
+    list-style:none;
+    display:inline-block;
+    float:right;
+}
+
+#menu_ppal li{
+	float:left;
+	font-size:16px;
+	line-height: 14px;	
+	text-align:center;
+	vertical-align:middle;
+	margin-left:10px;
+   	padding-right:10px;
+	color: #333;
+	font-size: 14px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+#menu_ppal li:hover {
+   color:#333;
+   text-decoration:none;
+}
+#menu_ppal li a:hover {
+   color:#333;
+   text-decoration:none;
+   }
+
+#menu_ppal li:active {
+}
+
+#menu_ppal li a{
+	display:block;
+	color:#000;
+	text-decoration:none;
+	font-size:14px;
+}
+
+
+#menu_ppal li ul{
+	margin-top:20px;
+	box-shadow: 0px 0px 6px #222;	
+}
+
+#menu_ppal li li{
+	float:left;
+	padding:0px 10px;
+	line-height: 30px;	
+	width:180px;
+	text-align:left;
+	vertical-align:middle;
+	background:#8ABB24;
+	color:#000;
+}
+#menu_ppal li li a{
+	font-size:12px;
+	color:#000;
+	text-decoration:none;
+}
+
+
+#menu_ppal li li a:hover{
+	color:#333;
+	text-decoration:none;
+	background:none;
+}
+
+#menu_ppal .separador{
+	float:left;
+	font-size:12px;
+	line-height: 10px;	
+  	padding: 0px;
+  	margin: 0px;
+    box-shadow: none;
+    text-shadow: none;
+	width:1px;
+	display: inline-block;
+	background:#FFF;
+	height:20px;
+}
+
+
+
+
+#menu_familias{
+	text-align:left;
+	z-index:0;
+
+}
+	#menu_familias h1, #menu_familias h1 a{
+/*		background:#383D41; */
+		font-size:12px;
+        font-family: 'Arial','snas-serif';
+        font-weight: bold;
+        color:#003580;
+		text-align:left;
+		margin-top:5px;
+		margin-bottom:5px;
+		z-index:0;
+		line-height:20px;
+		padding-left:5px;
+	}
+		#menu_familias a h1:hover{
+			text-decoration:underline;
+			color:#333;
+		}
+
+	#menu_familias h2, #menu_familias h2 a{
+        font-family: 'Arial','snas-serif';
+        font-weight: bold;
+        color:#003580;
+		text-align:left;
+		margin-top:5px;
+		margin-bottom:5px;
+		z-index:0;
+		font-size:12px;
+		line-height:20px;
+		padding-left:40px;
+		width:200px;
+	}
+		#menu_familias a h2:hover{
+			text-decoration:underline;
+			color: #000;
+		}
+

@@ -1,0 +1,9 @@
+.alert-danger, .alert-error {
+	color: #fff;
+	background-color: #CE0505;
+	border-color: #CE0505;
+	font-size:14px;
+	/*text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);*/
+	text-shadow: none;
+	text-align:center;
+}

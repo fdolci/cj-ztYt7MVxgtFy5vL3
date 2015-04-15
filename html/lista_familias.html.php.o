@@ -1,0 +1,86 @@
+<?php if (!empty($Sumario)){ ?>
+	<div class="grid_12" id="sumario_home">
+			<?php echo $Sumario;?>
+	</div>
+    <div class="clear"></div>
+<?php } ?>
+
+<div class="barra_naranja" >
+	<div class="grid_5">Seleccionar por provincia</div>
+	<div class="grid_6">Seleccionar por las Categorias del Directorio</div>
+</div>
+<div class="clear"></div>
+
+<?php include('html/mapa_interactivo.html.php'); ?>
+
+<?php 
+	$cuantas_categorias = count($Familias);
+	$tercio    = ceil($cuantas_categorias/3);
+	$contador = 0;
+?>
+
+	<div class="grid_3 alpha">
+		<ul id="destacados_home">
+    
+		<?php foreach($Familias as $fam) { ?> 
+			<li>
+				<a href="<?php echo $fam['url'];?>" title="<?php echo trim($fam['titulo']);?>">
+					<?php echo substr($fam['nombre'],0,30);?> (<?php echo $fam['cuantos'];?>)</a>
+			</li>
+		
+			<?php
+				$contador++;
+				if ($contador == $tercio){
+					$tercio = ($tercio*2);
+					echo "</ul>";
+					echo "</div>";
+					echo "<div class='grid_3 omega'>";
+					echo "<ul id='destacados_home'>";
+				}
+			?>
+	
+		<?php } // foreach ?>
+		</ul>
+	</div>
+
+<div class="clear"></div>
+
+
+<!-- Empresas Recomendadas -->
+<div class="fondo_gris">
+	<div class="grid_5 top_ten">
+		<?php include(ROOT.'/html/inc_mas_visitadas.html.php');?>
+	</div>
+	<div class="grid_2">
+		<?php //avisos('B0'); ?>
+		<img src='<?php echo URL;?>/img/trabaja_con_nosotros.jpg' style='margin-top:5px;'>
+		<img src='<?php echo URL;?>/img/entoas_blanco.jpg' style='margin:20px 0px;'>
+		<img src='<?php echo URL;?>/img/deseas_tu_propio_directorio.jpg' >
+
+	</div>
+	<div class="grid_5 top_ten">
+		<?php include(ROOT.'/html/inc_ultimas.html.php');?>
+	</div>
+</div> <!-- end fondo_gris -->
+<div class="clear"></div>
+
+<div style='margin-top:25px 0px;text-align:center;'><?php include(ROOT.'/html/inc_barra_sharethis.html.php') ?>    </div>
+<div class="clear"></div>
+
+<div class='grid_6 dos_cajas'>
+	<?php include(ROOT.'/html/inc_facebook.html.php');?>
+</div>
+
+<div class='grid_6 dos_cajas' >
+	<h2 style='text-align:center;width:430px;margin-top:15px;'>Publica tu empresa en el Directorio</h2>
+	<p style='text-align:center;width:430px;'>Participa en el mayor ranking de empresas de Costa Rica.</p>
+	<p style='margin-bottom:20px;text-align:center;width:430px;'>Promociona tu negocio de forma diferente!!</p>
+	<a href="<?php echo URL;?>/registro.php" title='Añadir Empresa' id='agregar_empresa' style='margin-left:90px;'>Añadir empresa</a>
+    <a href="#" title='Como funciona' id='como_funciona'>Cómo funciona</a>              
+
+</div>
+
+<div class="clear"></div>
+
+
+<?php //include('html/inc_carrusel_comercios_adheridos.html.php');?>

@@ -1,0 +1,66 @@
+a{ color:#FF0000;}
+
+h1 {
+    font-family: 'Terminal Dosis',Arial,'Trebuchet MS',  sans-serif;
+    font-size:30px;
+    color: #FF9900;
+    margin-top:20px;
+    margin-bottom:10px;
+    font-weight:normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;    
+}
+
+
+h2{
+    font-family: 'Terminal Dosis',Arial,'Trebuchet MS',  sans-serif;
+	font-size:20px;
+    color: #FF9900;
+	text-align:left;
+    display: block;
+    font-weight:normal;
+    margin-bottom:10px;
+    margin-top:20px;
+}
+
+
+h3{
+	font-size:14px;
+	color:#FF0000;
+	padding:2px;
+    font-weight: normal;
+}
+
+p{
+/*    font-family: 'Ubuntu Condensed', sans-serif; */
+	font-size:16px;
+	color: #333;
+	padding:0 0 10px 0;
+}
+
+
+
+blockquote {
+    color: #FF0000;
+    padding:20px;
+    border:1px solid #FF0000;
+    margin:10px auto;
+}
+blockquote p{
+    color: #FF0000;
+}
+
+
+
+ul {
+    font-size:16px;
+    margin-left:30px;
+    list-style-type:circle;
+}
+
+
+ul ul {
+    font-size:16px;
+    margin-left:30px;
+    list-style-type:square;
+}
